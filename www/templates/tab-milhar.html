@@ -1,0 +1,17 @@
+<ion-view view-title="Account">
+  <ion-content>
+    <button type="button" ng-show="!milhar" ng-click="guess()" class="button button-block button-positive">Sortear</button>
+    <div ng-show="milhar">
+      <div class="card">
+        <div class="item item-text-wrap">
+          <div class="text-center">
+            {{milhar}}
+          </div>
+        </div>
+      </div>
+      <button type="button" ng-click="guess()" class="button button-block button-positive"> Sortear novamente</button>
+
+      <button type="button" ng-click="saveGame()" class="button button-block button-calm"> Salvar Jogo</button>
+    </div>
+  </ion-content>
+</ion-view>

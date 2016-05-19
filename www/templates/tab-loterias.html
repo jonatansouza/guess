@@ -1,0 +1,37 @@
+<ion-view view-title="Guess" class="text-center">
+  <ion-content>
+    <div class="card">
+      <div class="item item-text-wrap">
+        <div class="text-center">
+          Preencha os campos abaixo, para visualizar seu palpite!
+        </div>
+      </div>
+    </div>
+    <div class="list">
+      <label class="item item-input">
+        <input type="number" placeholder="Quantidade Total de Números" ng-model="totalNumbers">
+      </label>
+      <label class="item item-input">
+        <input type="number" placeholder="Quantidade Total de Palpites" ng-model="totalShots">
+      </label>
+      <div class="col">
+        <button ng-show="shots.length <= 0" class="button button-block button-positive" ng-click="calculateShot(totalNumbers, totalShots)">Calcular Palpite</button>
+        <button ng-show="shots.length > 0" class="button button-block button-assertive" ng-click="clearAll()">Limpar</button>
+      </div>
+    </div>
+    <div class="row" style="flex-wrap: wrap">
+      <div ng-repeat="shot in shots" class="col col-33">
+        <div class="card">
+          <div class="item item-text-wrap">
+            <div class="text-center">
+              <p>{{shot}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </ion-content>
+</ion-view>
