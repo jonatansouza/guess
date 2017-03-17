@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Sorteio
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="luckForm" (ngSubmit)="submitParams()">
+    <ion-item>
+      <ion-label>Quantos Numeros Sortear</ion-label>
+      <ion-input type="number" formControlName="qtd" name="qtd"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Numero máximo</ion-label>
+      <ion-input type="number" formControlName="limit" name="limit"></ion-input>
+    </ion-item>
+    <button ion-button type="submit" block [disabled]="!luckForm.valid">Sortear</button>
+  </form>
+  <ion-card *ngFor="let number of numbers" >
+    <ion-card-content>
+      {{number}}
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
